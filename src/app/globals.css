@@ -1,0 +1,95 @@
+@import "tailwindcss";
+
+/* ======================
+   BRAND & THEME TOKENS
+====================== */
+:root {
+  /* BRAND */
+  --brand-accent: #B6FF3B;
+  --brand-secondary: #3BF0FF;
+
+  /* DARK MODE */
+  --dark-bg: #0B0B0B;
+  --dark-text-primary: #FFFFFF;
+  --dark-text-secondary: #A1A1AA;
+
+  /* LIGHT MODE */
+  --light-bg-1: #E9ECEF;
+  --light-bg-2: #D6EFEA;
+  --light-bg-3: #F1F3F5;
+
+  --light-text-primary: #0A0A0A;
+  --light-text-secondary: #4B5563;
+}
+
+/* ======================
+   DARK MODE
+====================== */
+body[data-theme="dark"] {
+  background-color: var(--dark-bg);
+  color: var(--dark-text-primary);
+
+  background-image:
+    radial-gradient(
+      60% 60% at 80% 20%,
+      rgba(182, 255, 59, 0.12),
+      transparent 60%
+    ),
+    radial-gradient(
+      50% 50% at 20% 80%,
+      rgba(59, 240, 255, 0.08),
+      transparent 65%
+    ),
+    linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.03),
+      rgba(0, 0, 0, 0.5)
+    );
+
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  animation: darkGlow 20s ease-in-out infinite alternate;
+}
+
+/* Dark mode animation */
+@keyframes darkGlow {
+  0% {
+    background-position: 80% 20%, 20% 80%, 0% 0%;
+  }
+  100% {
+    background-position: 70% 30%, 30% 70%, 100% 100%;
+  }
+}
+
+/* ======================
+   LIGHT MODE
+====================== */
+body[data-theme="light"] {
+  color: var(--light-text-primary);
+
+  background-image:
+    linear-gradient(
+      135deg,
+      var(--light-bg-1) 0%,
+      var(--light-bg-2) 50%,
+      var(--light-bg-3) 100%
+    );
+
+  background-attachment: fixed;
+  animation: lightShift 30s ease-in-out infinite alternate;
+}
+
+/* Light mode animation */
+@keyframes lightShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  body {
+    animation: none !important;
+  }
+}
