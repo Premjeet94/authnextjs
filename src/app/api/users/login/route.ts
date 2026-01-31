@@ -1,4 +1,4 @@
-import { connect } from "@/src/lib/db";
+import  connect  from "@/src/lib/db";
 import User from "@/src/models/user.model";
 import { NextRequest, NextResponse } from "next/server";
 import bcryptjs from "bcryptjs";
@@ -8,7 +8,7 @@ export async function POST(request: NextRequest) {
   try {
     await connect();
     const reqBody = await request.json();
-    const { email, password } = await reqBody;
+    const { email, password } =  reqBody;
     console.log(reqBody);
     if (!email || !password) {
       return NextResponse.json(
@@ -18,7 +18,7 @@ export async function POST(request: NextRequest) {
     }
 
     //If User Exist
-    const existingUser = await User.findOne({ email });
+    const existingUser = await User.findOne({ email }).select('+password');
     if (!existingUser) {
       return NextResponse.json(
         { error: "User does not exist, Please LogIn" },

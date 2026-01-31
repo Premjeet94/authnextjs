@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import FilmStrip from "./FilmStrip";
 
+
 export default function Hero() {
   return (
     <section className="relative min-h-screen px-6 flex flex-col">
@@ -24,14 +25,13 @@ export default function Hero() {
 text-3xl sm:text-4xl md:text-5xl lg:text-6xl
 font-semibold leading-tight
 text-black
-dark:text-white
-"
+dark:text-white"
         >
           We Build Digital Products{" "}
           <span
             className="
-text-[var(--brand-accent)]
-dark:text-[var(--brand-accent)]
+text-(--brand-secondary)
+dark:text-(--brand-secondary)
 "
           >
             That Convert

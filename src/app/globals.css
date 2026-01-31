@@ -22,10 +22,7 @@
   --light-text-secondary: #4B5563;
 }
 
-/* ======================
-   DARK MODE
-====================== */
-body[data-theme="dark"] {
+html.dark body{
   background-color: var(--dark-bg);
   color: var(--dark-text-primary);
 
@@ -51,6 +48,34 @@ body[data-theme="dark"] {
   animation: darkGlow 20s ease-in-out infinite alternate;
 }
 
+/* ======================
+   DARK MODE
+====================== */
+/* body[data-theme="dark"] {
+  background-color: var(--dark-bg);;
+
+  background-image:
+    radial-gradient(
+      60% 60% at 80% 20%,
+      rgba(182, 255, 59, 0.12),
+      transparent 60%
+    ),
+    radial-gradient(
+      50% 50% at 20% 80%,
+      rgba(59, 240, 255, 0.08),
+      transparent 65%
+    ),
+    linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.03),
+      rgba(0, 0, 0, 0.5)
+    );
+
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  animation: darkGlow 20s ease-in-out infinite alternate;
+} */
+
 /* Dark mode animation */
 @keyframes darkGlow {
   0% {
@@ -60,11 +85,7 @@ body[data-theme="dark"] {
     background-position: 70% 30%, 30% 70%, 100% 100%;
   }
 }
-
-/* ======================
-   LIGHT MODE
-====================== */
-body[data-theme="light"] {
+html.light body{
   color: var(--light-text-primary);
 
   background-image:
@@ -78,6 +99,24 @@ body[data-theme="light"] {
   background-attachment: fixed;
   animation: lightShift 30s ease-in-out infinite alternate;
 }
+
+/* ======================
+   LIGHT MODE
+====================== */
+/* body[data-theme="light"] {
+  color: var(--light-text-primary);
+
+  background-image:
+    linear-gradient(
+      135deg,
+      var(--light-bg-1) 0%,
+      var(--light-bg-2) 50%,
+      var(--light-bg-3) 100%
+    );
+
+  background-attachment: fixed;
+  animation: lightShift 30s ease-in-out infinite alternate;
+} */
 
 /* Light mode animation */
 @keyframes lightShift {

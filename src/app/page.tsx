@@ -19,17 +19,17 @@ export default function HomePage() {
   }, []);
 
   return (
-    <>
+    <div className="relative overflow-hidden transition-all duration-300">
       {/* INTRO */}
       <AnimatePresence>
         {phase === "intro" && <IntroOverlay />}
       </AnimatePresence>
 
       {/* NAVBAR */}
-      <Navbar show={phase === "ready"} />
+      <Navbar show = {phase === "ready"} />
 
       {/* HERO */}
       {phase === "ready" && <Hero />}
-    </>
+    </div>
   );
 }
