@@ -22,7 +22,7 @@
   --light-text-secondary: #4B5563;
 }
 
-html.dark body{
+/* html.dark body{
   background-color: var(--dark-bg);
   color: var(--dark-text-primary);
 
@@ -46,7 +46,7 @@ html.dark body{
   background-repeat: no-repeat;
   background-attachment: fixed;
   animation: darkGlow 20s ease-in-out infinite alternate;
-}
+} */
 
 /* ======================
    DARK MODE
@@ -77,15 +77,15 @@ html.dark body{
 } */
 
 /* Dark mode animation */
-@keyframes darkGlow {
+/* @keyframes darkGlow {
   0% {
     background-position: 80% 20%, 20% 80%, 0% 0%;
   }
   100% {
     background-position: 70% 30%, 30% 70%, 100% 100%;
   }
-}
-html.light body{
+} */
+/* html.light body{
   color: var(--light-text-primary);
 
   background-image:
@@ -98,7 +98,7 @@ html.light body{
 
   background-attachment: fixed;
   animation: lightShift 30s ease-in-out infinite alternate;
-}
+} */
 
 /* ======================
    LIGHT MODE
@@ -119,7 +119,7 @@ html.light body{
 } */
 
 /* Light mode animation */
-@keyframes lightShift {
+/* @keyframes lightShift {
   0% {
     background-position: 0% 50%;
   }
@@ -130,5 +130,15 @@ html.light body{
 @media (prefers-reduced-motion: reduce) {
   body {
     animation: none !important;
+  }
+} */
+.hero {
+
+  background-image: url("/HeroMobile.png");
+}
+
+@media (min-width: 768px) {
+  .hero {
+    background-image: url("/hero.png");
   }
 }
