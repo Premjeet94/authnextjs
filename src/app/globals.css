@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@import 'remixicon/fonts/remixicon.css';
 
 /* ======================
    BRAND & THEME TOKENS
@@ -134,11 +135,16 @@
 } */
 .hero {
 
-  background-image: url("/HeroMobile.png");
+  background-image: url("/mobile.png");
 }
 
 @media (min-width: 768px) {
   .hero {
-    background-image: url("/hero.png");
+    background-image: url("/tab.png");
+  }
+}
+@media (min-width: 1024px) {
+  .hero {
+    background-image: url("/website.png");
   }
 }
